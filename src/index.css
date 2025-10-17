@@ -1,0 +1,100 @@
+/* Fonts and Tailwind entry CSS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Project custom layers (moved from src/styles/globals.css)
+	 Keep these after the @tailwind directives so @apply has access to utilities. */
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+  body {
+  background: linear-gradient(180deg, #0a0a1f, #08081b);
+  color: white;
+}
+
+	body {
+  background: linear-gradient(180deg, #0a0a1f, #08081b);
+  color: white;
+}   }
+
+
+@layer components {
+	.btn-primary {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.75rem 1.5rem;
+		border-radius: 9999px;
+		font-weight: 700;
+		color: #000000;
+		background: linear-gradient(90deg, #A0FF8F 0%, #7FE65A 100%);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.btn-primary:hover {
+		transform: scale(1.05);
+		box-shadow: 0 10px 30px rgba(160,255,143,0.15);
+	}
+
+	.btn-outline {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.75rem 1.5rem;
+		border-radius: 9999px;
+		font-weight: 700;
+		color: #A0FF8F;
+		border: 2px solid #A0FF8F;
+		background: transparent;
+		transition: background-color 0.3s ease, color 0.3s ease;
+	}
+
+	.btn-outline:hover {
+		background: #A0FF8F;
+		color: #000000;
+	}
+
+	.glass-card {
+		background: linear-gradient(135deg, rgba(10,10,30,0.8), rgba(15,15,35,0.8));
+		backdrop-filter: blur(8px);
+		border: 1px solid rgba(255,255,255,0.06);
+		border-radius: 1.5rem;
+		box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+	}
+
+	.section-padding {
+		padding-top: 5rem;
+		padding-bottom: 5rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
+	.container-custom {
+		max-width: 1120px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: #0F0F23; /* primary-100 fallback */
+}
+
+::-webkit-scrollbar-thumb {
+	background: #A0FF8F; /* secondary fallback */
+	border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #7FE65A;
+}
